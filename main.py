@@ -4,9 +4,22 @@ from textprompts import clipboard_urgent_care_questions_injury, clipboard_urgent
 
 
 
-layout = [  [sg.Text('UC:'), sg.Button('Urgent Care - INJURY'), sg.Button('Urgent Care - GI'), sg.Button('Urgent Care - Ear Infection'),sg.Button('Urgent Care - URI') ],
-            [sg.Text('RX:'), sg.Button('RX: - O Request'),sg.Button('RX: - Pharmacy Request') , ],
-            [sg.Text('Fecal: '), sg.Button('Fecal: - Fecal PCR all negative'), sg.Checkbox('Voicemail', key = "-VOICEMAIL-")]  ]
+layout = [
+    [sg.Text('UC:', size=(10, 1), font=('Helvetica', 12)), 
+     sg.Button('Urgent Care - INJURY', size=(25, 2), font=('Helvetica', 12)), 
+     sg.Button('Urgent Care - GI', size=(25, 2), font=('Helvetica', 12)), 
+     sg.Button('Urgent Care - Ear Infection', size=(30, 2), font=('Helvetica', 12)), 
+     sg.Button('Urgent Care - URI', size=(25, 2), font=('Helvetica', 12))],
+
+    [sg.Text('RX:', size=(10, 1), font=('Helvetica', 12)), 
+     sg.Button('RX: - O Request', size=(25, 2), font=('Helvetica', 12)), 
+     sg.Button('RX: - Pharmacy Request', size=(30, 2), font=('Helvetica', 12))],
+
+    [sg.Text('Fecal:', size=(10, 1), font=('Helvetica', 12)), 
+     sg.Button('Fecal: - Fecal PCR all negative', size=(35, 2), font=('Helvetica', 12)), 
+     sg.Checkbox('Voicemail', key="-VOICEMAIL-", font=('Helvetica', 12))]
+]
+
 
 window = sg.Window('APV-TextWriter', layout)
 
