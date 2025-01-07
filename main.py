@@ -1,12 +1,12 @@
 import PySimpleGUI as sg
 
-from textprompts import clipboard_urgent_care_questions_injury, clipboard_urgent_care_questions_gi, clipboard_urgent_care_questions_ear, clipboard_urgent_care_questions_uri,clipboard_rx_clientrequest_meds
+from textprompts import clipboard_urgent_care_questions_injury, clipboard_urgent_care_questions_gi, clipboard_urgent_care_questions_ear, clipboard_urgent_care_questions_uri,clipboard_rx_clientrequest_meds, clipboard_rx_pharmacyrequest_meds, clipboard_fecal_PCR_negative
 
 
 
 layout = [  [sg.Text('UC:'), sg.Button('Urgent Care - INJURY'), sg.Button('Urgent Care - GI'), sg.Button('Urgent Care - Ear Infection'),sg.Button('Urgent Care - URI') ],
-            [sg.Text('RX:'), sg.Button('RX: - O request'), sg.Checkbox('Row 2 - #2'), sg.Checkbox('Row 2 - #3')],
-            [sg.Text('ROW 3'), sg.Button('Row 3 - #1'), sg.Button('Row 3 - #2')]  ]
+            [sg.Text('RX:'), sg.Button('RX: - O Request'),sg.Button('RX: - Pharmacy Request') , ],
+            [sg.Text('Fecal: '), sg.Button('Fecal: - Fecal PCR all negative'), sg.Checkbox('Voicemail', key = "-VOICEMAIL-")]  ]
 
 window = sg.Window('APV-TextWriter', layout)
 
@@ -35,6 +35,14 @@ while True:
     #for rx
     if event == 'RX: - O request':
         clipboard_rx_clientrequest_meds()
+    if event == 'RX: - Pharmacy Request':
+        clipboard_rx_pharmacyrequest_meds()
+
+    #for fecal
+    if event == "Fecal: - Fecal PCR all negative":
+        clipboard_fecal_PCR_negative(values["-VOICEMAIL-"])
+        
+    
 
 
 

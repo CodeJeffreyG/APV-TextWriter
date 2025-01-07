@@ -88,3 +88,29 @@ def clipboard_rx_clientrequest_meds():
         "What is the quantity?: "
     ]
     pyperclip.copy("\n\n".join(information))
+
+def clipboard_rx_pharmacyrequest_meds():
+    """
+    Returns a single string of pharmacy medication request questions formatted for easy copying.
+    """
+    questions = [
+        "What is the name of the pharmacy?: ",
+        "What is the name of the person I am speaking with?: ",
+        "What is the name of the medication being requested?: ",
+        "What is the quantity of the medication being requested?: ",
+        "What is the dosage and frequency of administration?: ",
+        "Has this medication been filled here previously?: ",
+        "Is there a specific urgency for the medication refill?: ",
+        "Is there a prescription ID or reference number for the request?: ",
+        "Are there any special instructions or notes from the pharmacy?: ",
+        "What is the pharmacy's contact number if a follow-up is needed?: "
+    ]
+    pyperclip.copy("\n\n".join(questions))
+    print("Pharmacy medication request questions copied.")
+
+def clipboard_fecal_PCR_negative(boolean):
+    if boolean:
+        pyperclip.copy("LVM - Fecal PCR ALL NEG")
+    else:
+        pyperclip.copy("SWO - Fecal PCR ALL NEG")
+        
