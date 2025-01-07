@@ -6,6 +6,20 @@ layout = [  [sg.Text('ROW 1'), sg.Button('Row 1 - #1'), sg.Checkbox('Row 1 - #2'
 
 window = sg.Window('APV-TextWriter', layout)
 
-event, values = window.read()
+
+
+
+
+# Event loop
+while True:
+    event, values = window.read()
+
+    # Break the loop if the window is closed
+    if event == sg.WINDOW_CLOSED:
+        break
+
+    # Call the function when 'Row 1 - #1' is clicked
+    if event == 'Row 1 - #1':
+        say_hello()
 
 window.close()
