@@ -16,14 +16,15 @@ def clipboard_urgent_care_questions_injury():
         "Have there been any changes in behavior (e.g., lethargy, aggression, hiding)?: ",
         "Have you tried any treatments or interventions at home (e.g., first aid, over-the-counter medication)?: ",
         "Is your pet able to stand, walk, or move normally?: "
+        ,"Resolution? :"
     ]
     pyperclip.copy("\n\n".join(questions));
     print("injury questions copied.")
 
 def clipboard_urgent_care_questions_gi():
     """
-Returns a single string of urgent care questions formatted for easy copying.
-"""
+    Returns a single string of urgent care questions formatted for easy copying.
+    """
     questions = [
         "What seems to be the issue or concern?: ",
         "When did the incident or symptoms start?: ",
@@ -39,6 +40,7 @@ Returns a single string of urgent care questions formatted for easy copying.
         "Has your pet been treated with any medications, dewormers, or supplements recently?: ",
         "Has your pet had a history of GI issues or sensitivities in the past?: ",
         "Are there any other pets in the household experiencing similar symptoms?: "
+        ,"Resolution? :"
     ]
     pyperclip.copy("\n\n".join(questions))
     print("GI questions copied.")
@@ -58,6 +60,7 @@ def clipboard_urgent_care_questions_ear():
         "Has your pet had any history of ear infections or ear-related issues in the past?: ",
         "Have you tried any treatments or interventions at home (e.g., ear cleaning, medications)?: ",
         "Are there any other symptoms you’ve observed, such as balance issues or head tilting?: "
+        ,"Resolution? :"
     ]
     pyperclip.copy("\n\n".join(questions))
     print("Ear questions copied.")
@@ -78,6 +81,7 @@ def clipboard_urgent_care_questions_uri():
         "Have there been any changes in your pet's appetite or water consumption?: ",
         "Has your pet been exposed to other animals that might be sick?: ",
         "Have you tried any treatments or interventions at home (e.g., humidifier, medications)?: "
+        ,"Resolution? :"
     ]
     pyperclip.copy("\n\n".join(questions))
     print("URI questions copied.")
@@ -103,14 +107,15 @@ def clipboard_rx_pharmacyrequest_meds():
         "Is there a specific urgency for the medication refill?: ",
         "Is there a prescription ID or reference number for the request?: ",
         "Are there any special instructions or notes from the pharmacy?: ",
-        "What is the pharmacy's contact number if a follow-up is needed?: "
+        "What is the pharmacy's contact number if a follow-up is needed?: ",
+        
     ]
     pyperclip.copy("\n\n".join(questions))
     print("Pharmacy medication request questions copied.")
 
 def clipboard_fecal_PCR_negative(boolean):
     if boolean:
-        pyperclip.copy("LVM - Fecal PCR ALL NEG")
+        pyperclip.copy("Results - FECAL PCR - ALL NEGATIVE / LM")
     else:
-        pyperclip.copy("SWO - Fecal PCR ALL NEG")
+        pyperclip.copy("Results - FECAL PCR - ALL NEGATIVE / SWO")
         
