@@ -119,3 +119,12 @@ def clipboard_fecal_PCR_negative(boolean):
     else:
         pyperclip.copy("Results - FECAL PCR - ALL NEGATIVE / SWO")
         
+
+def clipboard_fecal_generic_call():
+    """
+    Copies a generic call update template to the clipboard.
+    """
+    message = "UPDATE: [Reason] / When it happened / Symptoms / Resolution"
+    pyperclip.copy(message)
+    print("Generic call update copied to clipboard.")
+

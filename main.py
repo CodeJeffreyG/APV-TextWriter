@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
 
-from textprompts import clipboard_urgent_care_questions_injury, clipboard_urgent_care_questions_gi, clipboard_urgent_care_questions_ear, clipboard_urgent_care_questions_uri,clipboard_rx_clientrequest_meds, clipboard_rx_pharmacyrequest_meds, clipboard_fecal_PCR_negative
+from textprompts import clipboard_urgent_care_questions_injury, clipboard_urgent_care_questions_gi, clipboard_urgent_care_questions_ear, clipboard_urgent_care_questions_uri,clipboard_rx_clientrequest_meds, clipboard_rx_pharmacyrequest_meds, clipboard_fecal_PCR_negative, clipboard_fecal_generic_call
 
 
 
@@ -17,7 +17,10 @@ layout = [
 
     [sg.Text('Fecal:', size=(10, 1), font=('Helvetica', 12)), 
      sg.Button('Fecal: - Fecal PCR all negative', size=(35, 2), font=('Helvetica', 12)), 
-     sg.Checkbox('Voicemail', key="-VOICEMAIL-", font=('Helvetica', 12))]
+     sg.Checkbox('Voicemail', key="-VOICEMAIL-", font=('Helvetica', 12))],
+
+     [sg.Text('Generic Call:', size=(10, 1), font=('Helvetica', 12)), 
+     sg.Button('Generic Call: - phone call template', size=(35, 2), font=('Helvetica', 12)), ]
 ]
 
 
@@ -55,7 +58,8 @@ while True:
     if event == "Fecal: - Fecal PCR all negative":
         clipboard_fecal_PCR_negative(values["-VOICEMAIL-"])
         
-    
+    if event == "Generic Call: - phone call template":
+        clipboard_fecal_generic_call()
 
 
 
